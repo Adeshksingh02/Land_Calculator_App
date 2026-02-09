@@ -199,11 +199,11 @@ elif option == "मीटर (Meter) से नापें":
 
     col1, col2 = st.columns(2)
     with col1:
-        l1 = st.number_input("पूर्व (East) की लंबाई - मीटर में", format="%.2f", key="m_l1")
-        w1 = st.number_input("उत्तर (North) की चौड़ाई - मीटर में", format="%.2f", key="m_w1")
+        l1 = st.number_input("पूर्व (East) की लंबाई - मीटर में", format="%.3f", key="m_l1")
+        w1 = st.number_input("उत्तर (North) की चौड़ाई - मीटर में", format="%.3f", key="m_w1")
     with col2:
-        l2 = st.number_input("पश्चिम (West) की लंबाई - मीटर में", format="%.2f", key="m_l2")
-        w2 = st.number_input("दक्षिण (South) की चौड़ाई - मीटर में", format="%.2f", key="m_w2")
+        l2 = st.number_input("पश्चिम (West) की लंबाई - मीटर में", format="%.3f", key="m_l2")
+        w2 = st.number_input("दक्षिण (South) की चौड़ाई - मीटर में", format="%.3f", key="m_w2")
 
     if st.button("कैलकुलेट करें (Calculate Meter)"):
         # चारों भुजाओं की वैलिडेशन
@@ -229,3 +229,4 @@ elif option == "मीटर (Meter) से नापें":
 # फुटर
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>Developed by AKS | Special for Uttar Pradesh Region 🌾</p>", unsafe_allow_html=True)
+
