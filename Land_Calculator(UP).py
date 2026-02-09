@@ -7,22 +7,15 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- CUSTOM CSS (नई और बेहतर सजावट) ---
+# --- CUSTOM CSS (सजावट के लिए कोड) ---
 st.markdown("""
     <style>
-    /* 1. मुख्य बैकग्राउंड (Main Background - Colorful) */
-    [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(to bottom right, #e8f5e9, #fffde7);
-        color: #1b5e20;
-    }
-
-    /* 2. साइडबार का बैकग्राउंड (Sidebar - Light Green) */
-    [data-testid="stSidebar"] {
-        background-color: #f1f8e9;
-        border-right: 2px solid #a5d6a7;
+    /* 1. पूरी वेबसाइट का बैकग्राउंड (Background) */
+    .stApp {
+        background: linear-gradient(to bottom, #e8f5e9, #ffffff);
     }
     
-    /* 3. हेडर और टाइटल (Header Styling) */
+    /* 2. टाइटल (Header) की स्टाइलिंग */
     h1 {
         color: #1b5e20;
         text-align: center;
@@ -31,20 +24,13 @@ st.markdown("""
         text-shadow: 2px 2px 4px #a5d6a7;
     }
     
-    /* 4. सब-टेक्स्ट (Sub-text) */
+    /* 3. सब-हेडर और टेक्स्ट */
     .stMarkdown p {
         font-size: 18px;
         color: #2e7d32;
     }
     
-    /* 5. इनपुट बॉक्स (Input Fields) */
-    .stNumberInput > div > div > input {
-        background-color: #ffffff;
-        border: 1px solid #81c784;
-        color: #1b5e20;
-    }
-    
-    /* 6. बटन (Button Styling) */
+    /* 4. बटन (Button) की स्टाइलिंग */
     div.stButton > button {
         background-color: #2e7d32;
         color: white;
@@ -60,9 +46,9 @@ st.markdown("""
         border-color: #66bb6a;
     }
 
-    /* 7. रिजल्ट बॉक्स (Result Box) */
+    /* 5. रिजल्ट बॉक्स (Result Box) */
     .result-box {
-        background-color: #dcedc8; /* गहरा हरा बॉक्स */
+        background-color: #dcedc8;
         padding: 20px;
         border-radius: 15px;
         border: 2px solid #33691e;
@@ -78,7 +64,7 @@ st.markdown("""
         margin-bottom: 10px;
     }
     
-    /* 8. लेबल्स (Labels) */
+    /* 6. इनपुट बॉक्स के लेबल का रंग */
     label {
         color: #1b5e20 !important;
         font-weight: bold !important;
@@ -140,7 +126,7 @@ if option == "फीट (Feet) से नापें":
         w2 = st.number_input("दक्षिण (South) की चौड़ाई - फीट में", min_value=0.0, format="%.2f")
 
     if st.button("कैलकुलेट करें (Calculate Feet)"):
-        if l1 > 0 and l2 > 0 and w1 > 0 and w2 > 0:
+        if l1 > 0 and w1 > 0:
             avg_len = (l1 + l2) / 2
             avg_wid = (w1 + w2) / 2
             total_sq_ft = avg_len * avg_wid
@@ -172,7 +158,7 @@ elif option == "लाठा (Latha) से नापें":
         w2 = st.number_input("दक्षिण (South) की चौड़ाई - लाठा में", min_value=0.0, format="%.2f")
 
     if st.button("कैलकुलेट करें (Calculate Latha)"):
-        if l1 > 0 and l2 > 0 and w1 > 0 and w2 > 0:
+        if l1 > 0 and w1 > 0:
             avg_len = (l1 + l2) / 2
             avg_wid = (w1 + w2) / 2
             total_sq_latha = avg_len * avg_wid
@@ -202,7 +188,7 @@ elif option == "मीटर (Meter) से नापें":
         w2 = st.number_input("दक्षिण (South) की चौड़ाई - मीटर में", min_value=0.0, format="%.2f")
 
     if st.button("कैलकुलेट करें (Calculate Meter)"):
-        if l1 > 0 and l2 > 0 and w1 > 0 and w2 > 0:
+        if l1 > 0 and w1 > 0:
             avg_len = (l1 + l2) / 2
             avg_wid = (w1 + w2) / 2
             total_sq_meter = avg_len * avg_wid
@@ -224,5 +210,3 @@ elif option == "मीटर (Meter) से नापें":
 # फुटर
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>Developed by AKS | Special for Uttar Pradesh Region 🌾</p>", unsafe_allow_html=True)
-
-
