@@ -140,7 +140,7 @@ if option == "फीट (Feet) से नापें":
         w2 = st.number_input("दक्षिण (South) की चौड़ाई - फीट में", min_value=0.0, format="%.2f")
 
     if st.button("कैलकुलेट करें (Calculate Feet)"):
-        if l1 > 0 and w1 > 0:
+        if l1 > 0 and l2 > 0 and w1 > 0 and w2 > 0:
             avg_len = (l1 + l2) / 2
             avg_wid = (w1 + w2) / 2
             total_sq_ft = avg_len * avg_wid
@@ -172,7 +172,7 @@ elif option == "लाठा (Latha) से नापें":
         w2 = st.number_input("दक्षिण (South) की चौड़ाई - लाठा में", min_value=0.0, format="%.2f")
 
     if st.button("कैलकुलेट करें (Calculate Latha)"):
-        if l1 > 0 and w1 > 0:
+        if l1 > 0 and l2 > 0 and w1 > 0 and w2 > 0:
             avg_len = (l1 + l2) / 2
             avg_wid = (w1 + w2) / 2
             total_sq_latha = avg_len * avg_wid
@@ -202,7 +202,7 @@ elif option == "मीटर (Meter) से नापें":
         w2 = st.number_input("दक्षिण (South) की चौड़ाई - मीटर में", min_value=0.0, format="%.2f")
 
     if st.button("कैलकुलेट करें (Calculate Meter)"):
-        if l1 > 0 and w1 > 0:
+        if l1 > 0 and l2 > 0 and w1 > 0 and w2 > 0:
             avg_len = (l1 + l2) / 2
             avg_wid = (w1 + w2) / 2
             total_sq_meter = avg_len * avg_wid
@@ -224,4 +224,5 @@ elif option == "मीटर (Meter) से नापें":
 # फुटर
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>Developed by AKS | Special for Uttar Pradesh Region 🌾</p>", unsafe_allow_html=True)
+
 
