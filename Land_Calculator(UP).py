@@ -7,15 +7,22 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- CUSTOM CSS (सजावट के लिए कोड) ---
+# --- CUSTOM CSS (नई और बेहतर सजावट) ---
 st.markdown("""
     <style>
-    /* 1. पूरी वेबसाइट का बैकग्राउंड (Background) */
-    .stApp {
-        background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+    /* 1. मुख्य बैकग्राउंड (Main Background - Colorful) */
+    [data-testid="stAppViewContainer"] {
+        background-image: linear-gradient(to bottom right, #e8f5e9, #fffde7);
+        color: #1b5e20;
+    }
+
+    /* 2. साइडबार का बैकग्राउंड (Sidebar - Light Green) */
+    [data-testid="stSidebar"] {
+        background-color: #f1f8e9;
+        border-right: 2px solid #a5d6a7;
     }
     
-    /* 2. टाइटल (Header) की स्टाइलिंग */
+    /* 3. हेडर और टाइटल (Header Styling) */
     h1 {
         color: #1b5e20;
         text-align: center;
@@ -24,13 +31,20 @@ st.markdown("""
         text-shadow: 2px 2px 4px #a5d6a7;
     }
     
-    /* 3. सब-हेडर और टेक्स्ट */
+    /* 4. सब-टेक्स्ट (Sub-text) */
     .stMarkdown p {
         font-size: 18px;
         color: #2e7d32;
     }
     
-    /* 4. बटन (Button) की स्टाइलिंग */
+    /* 5. इनपुट बॉक्स (Input Fields) */
+    .stNumberInput > div > div > input {
+        background-color: #ffffff;
+        border: 1px solid #81c784;
+        color: #1b5e20;
+    }
+    
+    /* 6. बटन (Button Styling) */
     div.stButton > button {
         background-color: #2e7d32;
         color: white;
@@ -46,9 +60,9 @@ st.markdown("""
         border-color: #66bb6a;
     }
 
-    /* 5. रिजल्ट बॉक्स (Result Box) */
+    /* 7. रिजल्ट बॉक्स (Result Box) */
     .result-box {
-        background-color: #dcedc8;
+        background-color: #dcedc8; /* गहरा हरा बॉक्स */
         padding: 20px;
         border-radius: 15px;
         border: 2px solid #33691e;
@@ -64,7 +78,7 @@ st.markdown("""
         margin-bottom: 10px;
     }
     
-    /* 6. इनपुट बॉक्स के लेबल का रंग */
+    /* 8. लेबल्स (Labels) */
     label {
         color: #1b5e20 !important;
         font-weight: bold !important;
@@ -210,3 +224,4 @@ elif option == "मीटर (Meter) से नापें":
 # फुटर
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>Developed by AKS | Special for Uttar Pradesh Region 🌾</p>", unsafe_allow_html=True)
+
